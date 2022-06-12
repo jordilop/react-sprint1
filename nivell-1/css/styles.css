@@ -73,3 +73,10 @@
             background: #e4a434;
             flex: 1 1 auto;
         }
+
+@media all and (max-width: 800px) {
+    .section {
+        background: #fff734;
+        flex-direction: column;
+    }
+}
