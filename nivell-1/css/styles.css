@@ -80,3 +80,18 @@
         flex-direction: column;
     }
 }
+
+@media all and (max-width: 480px) {
+    .section {
+        background: #fff734;
+        flex-direction: column;
+    }
+    .menu {
+        flex-direction: column;
+        height: auto;
+        align-items: stretch;
+    }
+    .articulos {
+        flex-direction: column;
+    }
+}
