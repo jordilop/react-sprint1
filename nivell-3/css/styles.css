@@ -10,32 +10,30 @@ body {
 .padre {
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-flow: column nowrap;
+    display: grid;
+    grid-template-areas: "header" "section" "footer";
 }
     .header {
         background: url(../img/header.jpg);
         background-position: center;
         background-size: 110em;
-        display: flex;
-        flex-flow: column nowrap;
+        grid-area: header;
         height: 24em;
     }
         .menu {
-            display: flex;
-            flex-flow: row nowrap;
             align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 5fr 1fr;
         }
             .logo {
-                flex: 1 1 auto;
                 text-align: center;
             }
             .logo img {
                 width: 5em;
             }
             .nav {
-                flex: 5 1 auto;
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(5, auto);
                 justify-content: space-evenly;
             }
                 .nav i {
@@ -49,8 +47,8 @@ body {
                     color: #acacac;
                 }
             .social {
-                flex: 1 1 auto;
-                display: flex;
+                display: grid;
+                grid-template-columns: repeat(2, auto);
                 justify-content: space-evenly;
             }
                 .social a {
@@ -60,10 +58,10 @@ body {
                     color: #acacac;
                 }
         .texto-principal {  
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            height: 100%;
+            display: grid;
+            justify-items: center;
+            align-items: end;
+            height: 19em;
         }
             .texto-principal h1 {
                 font-family: 'IM Fell Great Primer', serif;
@@ -78,18 +76,19 @@ body {
             }
     .section {
         background: #fff;
-        display: flex;
+        grid-area: section;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
         margin: .5em 0;
         font-size: .9em;
     }
         .articulos {
             background: #d8d7d7;
-            flex: 2 1 auto;
-            display: flex;
-            flex-flow: row wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
         }
             .article {
-                flex: 1 1 40%;
                 background: #f5f1f1;
                 color: #353535;
                 margin: .5em;
@@ -133,13 +132,12 @@ body {
                 column-gap: 1em;
             }
             .navegacion {
-                flex: 1 1 100%;
+                grid-column: span 2;
                 text-align: center;
                 padding: .5em;
             }
         .aside {
             background: #d8d7d7;
-            flex: 1 1 auto;
             padding: 0 .8em;
             margin-left: .5em;
             min-width: 20%;
@@ -150,13 +148,11 @@ body {
             }
     .footer {
         background: #d8d7d7;
-        display: flex;
-        justify-content: center;
+        grid-area: footer;
         margin-bottom: .5em;
     }
         .pie {
             background: #f5f1f1;
-            flex: 1 1 auto;
             text-align: center;
             padding: .8em;
             margin: 0 .5em;
@@ -167,7 +163,7 @@ body {
         font-size: .9em;
     }
     .section {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
     .aside {
         margin: .5em 0 0 0;
@@ -179,20 +175,26 @@ body {
         font-size: .8em;
     }
     .section {
-        flex-direction: column;
+        grid-template-columns: 1fr;
     }
     .menu {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         align-items: stretch;
     }
     .articulos {
-        flex-direction: column;
+        display: block;
+    }
+    .texto-principal {
+        height: 16.5em;
     }
 }
 
 @media all and (max-width: 360px) {
     body {
         font-size: .7em;
+    }
+    .texto-principal {
+        height: 17em;
     }
 }
 
