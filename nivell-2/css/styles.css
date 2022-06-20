@@ -1,0 +1,144 @@
+*{
+    max-width: 1200px;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+.padre {
+    display: flex;
+    flex-flow: column nowrap;
+}
+    .header {
+        background: url(../img/header.jpg);
+        background-position: center;
+        background-size: 110em;
+        display: flex;
+        flex-flow: column nowrap;
+        height: 24em;
+    }
+        .menu {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+        }
+            .logo {
+                flex: 1 1 auto;
+                text-align: center;
+            }
+            .logo img {
+                width: 5em;
+            }
+            .nav {
+                flex: 5 1 auto;
+                display: flex;
+                justify-content: space-evenly;
+            }
+                .nav i {
+                    padding: 0 .3vw;
+                }
+                .nav a {
+                    color: #808080;
+                    text-decoration: none;
+                }
+                .nav a:hover {
+                    color: #acacac;
+                }
+            .social {
+                flex: 1 1 auto;
+                display: flex;
+                justify-content: space-evenly;
+            }
+                .social a {
+                    color: #808080;
+                }
+                .social a:hover {
+                    color: #acacac;
+                }
+        .texto-principal {  
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            height: 100%;
+        }
+            .texto-principal h1 {
+                font-family: 'IM Fell Great Primer', serif;
+                font-weight: normal;
+                color: #f39a79;
+                background: rgba(0, 0, 0, .1);
+                text-align: center;
+                width: 80%;
+                height: 40%;
+                padding-top: .6em;
+            }
+    .section {
+        background: #000;
+        display: flex;
+    }
+        .articulos {
+            background: #44465e;
+            flex: 2 1 auto;
+            display: flex;
+            flex-flow: row wrap;
+        }
+            .article {
+                background: #1664a4;
+                flex: 1 1 40%;
+            }
+            .navegacion {
+                background: #6399bb;
+                flex: 1 1 100%;
+            }
+        .aside {
+            background: #f94c47;
+            flex: 1 1 auto;
+        }
+            .publicidad {
+                background: #ffe380;
+            }
+    .footer {
+        background: #000;
+        display: flex;
+        justify-content: center;
+    }
+        .pie {
+            background: #e4a434;
+            flex: 1 1 auto;
+        }
+
+@media all and (max-width: 800px) {
+    .header {
+        font-size: .9rem;
+    }
+    .texto-principal {
+        font-size: .9em;
+    }
+    .section {
+        background: #fff734;
+        flex-direction: column;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .header {
+        font-size: .8rem;
+    }
+    .texto-principal {
+        font-size: .8em;
+    }
+    .section {
+        background: #fff734;
+        flex-direction: column;
+    }
+    .menu {
+        flex-direction: column;
+        height: auto;
+        align-items: stretch;
+    }
+    .articulos {
+        flex-direction: column;
+    }
+}
